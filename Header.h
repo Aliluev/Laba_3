@@ -31,4 +31,5 @@ public:
   void Razbienie(const char U);
   MyString CopyMassive(int e);
   void Dublirovanie_Strok(int k);
+  int PoiskVsehPodstrok(const char* O);
 };

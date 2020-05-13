@@ -96,5 +96,12 @@ int main()
   Q.Dublirovanie_Strok(3);
   cout << Q << "\n";
 
+  cout << "metod izuzhi vse vxozhdenii" << "\n";
+  MyString I("Privet_Privet");
+  cout << "MyString I=Privet_Privet" << "\n";
+  cout << "skolko raz slovo VE?=" << "\n";
+  int kol = I.PoiskVsehPodstrok("ve");
+  cout << kol << "\n";
+
   return 0;
 }

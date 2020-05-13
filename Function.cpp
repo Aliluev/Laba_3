@@ -385,3 +385,28 @@ void MyString::Dublirovanie_Strok(int k) //дублирование строк k
   size = 0;//удаляем размер
   SetSlovo(new_massiv);//устанавливаем новое слово, где автоматически выделяется память и считается длина
 }
+
+
+int MyString::PoiskVsehPodstrok(const char* O)//Поиск всех вхождений вхождения подстроки
+{
+  int s = 0;//счётчик сколько раз подстрока входит
+  int kol = 0;//счётчик вхождений
+
+  int size_podstroki = strlen(O);
+  for (int i = 0; i < size - size_podstroki + 1; i++)
+  {
+    int kol = 0;
+    for (int k = 0; k < size_podstroki; k++)
+    {
+      if (slovo[i + k] == O[k])
+      {
+        kol++;
+        if (kol == size_podstroki)
+        {
+          s++;
+        }
+      }
+    }
+  }
+  return s;
+}
