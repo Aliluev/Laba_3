@@ -14,6 +14,7 @@ int main()
   cout << "Size A=" << A.GetSize() << "\n";//Доступ к защищённым полям
   cout << "Slovo A=" << A.GetString() << "\n";//Доступ к защищённым полям
   cout << "function Set Set_Slovo,cin,cout<<" << "\n";
+  cout << "Vvedite slovo"<<"\n";
   MyString D;
   cin >> D;
   cout << "vveli=" << D << "\n";
@@ -67,7 +68,7 @@ int main()
   MyString T("Privet_vsem");
   cout << "MyString T=" << T;
   cout << "est li slovo VE?" << "\n";
-  int y = 0;
+ char* y = 0;
   y = T.PoiskPodstroki("ve");
   cout << y << "\n" << "\n";
 
@@ -76,7 +77,7 @@ int main()
   MyString O("ishu_simvol");
   cout << "MyString O=" << O;
   cout << "est li simvol M?" << "\n";
-  int w = 0;
+  char* w = 0;
   w = T.PoiskSimvola('m');
   cout << w << "\n" << "\n";
 
@@ -100,7 +101,7 @@ int main()
   MyString I("Privet_Privet");
   cout << "MyString I=Privet_Privet" << "\n";
   cout << "skolko raz slovo VE?=" << "\n";
-  int kol = I.PoiskVsehPodstrok("ve");
+  char* kol = I.PoiskVsehPodstrok("ve");
   cout << kol << "\n";
 
   return 0;

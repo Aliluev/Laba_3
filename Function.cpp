@@ -297,7 +297,7 @@ std::istream& operator>>(istream& in, MyString& Y) {
   Y = e;
   return in;
 }
-int MyString::PoiskPodstroki(const char* O)//Поиск первого вхождения подстроки
+char* MyString::PoiskPodstroki(const char* O)//Поиск первого вхождения подстроки
 {
   int kol = 0;//счётчик вхождений
 
@@ -312,26 +312,38 @@ int MyString::PoiskPodstroki(const char* O)//Поиск первого вхож�
         kol++;
         if (kol == size_podstroki)
         {
-          return 1;
+          cout << "Nashel Podstroku v slove=" << slovo << "\n";
+          cout << "kotoraya imeet index=[" << i << "]" << "\n";
+          return slovo;
         }
       }
     }
   }
-  return 0;
+  cout << "Net takoy podstroki"<<"\n";
+  char* net = 0;
+  net = new char[2];
+  net[0] = '0';
+  net[1] = 0;
+  return net;
 }
-int MyString::PoiskSimvola(const char Y)
+char* MyString::PoiskSimvola(const char Y)
 {
   int kol = 0;//счётчик вхождений
-
-  //int size_podstroki = strlen(O);
   for (int i = 0; i < size; i++)
   {
     if (slovo[i] == Y)
     {
-      return 1;
+      cout << "Nashel simvol v slove=" << slovo << "\n";
+      cout << "kotoraya imeet index=[" << i << "]" << "\n";
+      return slovo;
     }
   }
-  return 0;
+  cout << "Net takoy podstroki" << "\n";
+  char* net = 0;
+  net = new char[2];
+  net[0] = '0';
+  net[1] = 0;
+  return net;
 }
 MyString MyString::CopyMassive(int e)//метод копирования массива с памятью на 1 больше для метода разбиения
 {
@@ -367,7 +379,7 @@ void MyString::Razbienie(const char U)//разбиение на подслава
   {
     if (slovo[i] == U)
     {
-      this->CopyMassive(i);
+      this->CopyMassive(i);//используя этот метод делается пробел
       i++;//увеличиваем счётчик
     }
     i++;//увеличиваем счётчик
@@ -397,7 +409,7 @@ void MyString::Dublirovanie_Strok(int k) //дублирование строк k
 }
 
 
-int MyString::PoiskVsehPodstrok(const char* O)//Поиск всех вхождений вхождения подстроки
+char* MyString::PoiskVsehPodstrok(const char* O)//Поиск всех вхождений вхождения подстроки
 {
   int s = 0;//счётчик сколько раз подстрока входит
   int kol = 0;//счётчик вхождений
@@ -414,9 +426,20 @@ int MyString::PoiskVsehPodstrok(const char* O)//Поиск всех вхожде
         if (kol == size_podstroki)
         {
           s++;
+          cout << "Nashel simvol v slove=" << slovo << "\n";
+          cout << "kotoraya imeet index=[" << i << "]" << "\n";
         }
       }
     }
   }
-  return s;
+  if (s != 0) { return slovo; }
+  else
+  {
+    cout << "Net takoy podstroki" << "\n";
+    char* net = 0;
+    net = new char[2];
+    net[0] = '0';
+    net[1] = 0;
+    return net;
+  }
 }

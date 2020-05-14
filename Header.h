@@ -26,10 +26,10 @@ public:
   friend bool operator>(const MyString& J, const MyString& H);
   friend std::ostream& operator <<(ostream& out, MyString& X);
   friend std::istream& operator >>(istream& in, MyString& Y);
-  int PoiskPodstroki(const char* O);
-  int PoiskSimvola(const char Y);
+  char* PoiskPodstroki(const char* O);
+  char* PoiskSimvola(const char Y);
   void Razbienie(const char U);
   MyString CopyMassive(int e);
   void Dublirovanie_Strok(int k);
-  int PoiskVsehPodstrok(const char* O);
+  char* PoiskVsehPodstrok(const char* O);
 };
