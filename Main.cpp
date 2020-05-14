@@ -86,8 +86,16 @@ int main()
   MyString U("privet_privet_privet");
   cout << "MyString U=" << U;
   cout << "razbienie na podslova po simvoly e" << "\n";
-  T.Razbienie('e');
-  cout << T << "\n" << "\n";
+  MyString* t = 0;
+  t = new MyString[4];
+  t=U.Razbienie('e');
+  cout << "posle razbitiya" << "\n";
+  MyString m = t[0];
+  cout<<"U[0]"=
+  cout << m << "\n" << "\n";
+  MyString N = t[1];
+  cout << "U[1]=" << "\n";
+  cout << N << "\n" << "\n";
 
 
   cout << "metod dubliruushi stroku k raz" << "\n";

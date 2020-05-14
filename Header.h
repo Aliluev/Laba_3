@@ -28,7 +28,7 @@ public:
   friend std::istream& operator >>(istream& in, MyString& Y);
   char* PoiskPodstroki(const char* O);
   char* PoiskSimvola(const char Y);
-  void Razbienie(const char U);
+  MyString* Razbienie(const char U);
   MyString CopyMassive(int e);
   void Dublirovanie_Strok(int k);
   char* PoiskVsehPodstrok(const char* O);

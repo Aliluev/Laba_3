@@ -1,4 +1,6 @@
 #include"Header.h"
+//#include<string.h>
+#include<cstring>
 MyString::MyString()
 {
   size = 1;
@@ -272,10 +274,7 @@ bool operator<(const MyString& J, const MyString& H)
         return 1;
       }
 
-      /*if (J.slovo[i] == H.slovo[i])
-      {
-        return 0;
-      }*/
+      
     }
     return 0;
 
@@ -371,19 +370,32 @@ MyString MyString::CopyMassive(int e)//метод копирования мас�
 
   return *this;
 }
-void MyString::Razbienie(const char U)//разбиение на подслава по символу
+
+MyString* MyString::Razbienie(const char U)//разбиение на подслава по символу
 {
   //MyString A(*this);
+  int kol = 0;
   int i = 0;
   while (i < size)
   {
     if (slovo[i] == U)
     {
       this->CopyMassive(i);//используя этот метод делается пробел
+      kol = kol + 1;//в будущем для выделения памяти
       i++;//увеличиваем счётчик
     }
     i++;//увеличиваем счётчик
-  }
+  }  
+  int g = 0;
+  MyString* a = new MyString[kol+1];
+      char* c = strtok(this->GetString()," ");
+      while (c != NULL)
+      {
+       a[g] = c;
+       g += 1;
+        c = strtok(NULL, " ");
+      }
+   return a;
 }
 
 void MyString::Dublirovanie_Strok(int k) //дублирование строк k раз
