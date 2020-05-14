@@ -8,17 +8,27 @@ MyString::MyString()
 MyString::MyString(const char* A)
 {
   slovo = nullptr;
-  if (strlen(A) > 0)
-  {
-    size = strlen(A) + 1;
-    slovo = new char[size];
-    for (int i = 0; i < size - 1; i++)
+  try {
+    if (strlen(A) > 0)
     {
-      slovo[i] = A[i];
+      size = strlen(A) + 1;
+      slovo = new char[size];
+      for (int i = 0; i < size - 1; i++)
+      {
+        slovo[i] = A[i];
+      }
+      slovo[size - 1] = 0;
     }
-    slovo[size - 1] = 0;
+
+    else throw 1;
   }
-  //else throw "Nevern";
+  catch (int i)
+  {
+    cout << "oshibka vvoda dannux, char=0"<<"\n";
+    cout << "VVedite slovo zanovo" << "\n";
+    MyString R;
+    cin >> R;
+  }
 }
 MyString::MyString(char b)
 {
@@ -43,7 +53,6 @@ MyString::MyString(MyString& c)
   for (int i = 0; i < (size); i++)
   {
     slovo[i] = c.GetString()[i];
-    //slovo[i] = c.GetString()[i];
   }
 }
 
@@ -52,6 +61,7 @@ MyString::~MyString()
 
   if (slovo != 0)
   {
+    slovo = 0;
     delete[] slovo;
   }
   size = 0;
